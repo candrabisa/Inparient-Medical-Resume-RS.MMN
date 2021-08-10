@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "115099351854",
+    "project_id": "imr-rsmmn",
+    "storage_bucket": "imr-rsmmn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115099351854:android:c7b8dd5b11233d8d9618bf",
+        "android_client_info": {
+          "package_name": "com.rsmmn.inparientmedicalresumersmmn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "115099351854-pq26is98c87ff455hl5qtr5bdtm533n9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-6IVQaNuoN3-0Q9g_DxLbnaxcojS25cY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "115099351854-pq26is98c87ff455hl5qtr5bdtm533n9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
