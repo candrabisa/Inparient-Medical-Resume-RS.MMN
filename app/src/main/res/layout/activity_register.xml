@@ -72,6 +72,34 @@
                         android:capitalize="characters"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:text="Jabatan"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        android:layout_gravity="left"/>
+
+                    <Spinner
+                        android:id="@+id/sp_jabatanReg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/jabatan"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="8dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@android:color/darker_gray"/>
+                </LinearLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -96,6 +124,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
+                        android:digits="@string/digit_password"
                         android:hint="Password"/>
                 </com.google.android.material.textfield.TextInputLayout>
 

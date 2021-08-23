@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -32,6 +33,7 @@ public class register extends AppCompatActivity {
     ImageView btn_kembaliReg;
     Button btn_daftarReg;
     EditText et_namaLengkapReg, et_idCardReg, et_emailReg, et_pwReg;
+    Spinner sp_jabatan;
 
     ProgressDialog progressDialog;
 
@@ -49,6 +51,7 @@ public class register extends AppCompatActivity {
         et_idCardReg = findViewById(R.id.et_idCardReg);
         et_emailReg = findViewById(R.id.et_emailReg);
         et_pwReg = findViewById(R.id.et_pwReg);
+        sp_jabatan = findViewById(R.id.sp_jabatanReg);
 
         fAuth = FirebaseAuth.getInstance();
 
@@ -61,6 +64,7 @@ public class register extends AppCompatActivity {
                     final String idcard = et_idCardReg.getText().toString();
                     final String email = et_emailReg.getText().toString();
                     final String password = et_pwReg.getText().toString();
+                    final String jabatan = sp_jabatan.getSelectedItem().toString();
 
                     if (nama_lengkap.isEmpty()){
                         et_namaLengkapReg.setError("Nama lengkap belum diisi");
@@ -90,7 +94,7 @@ public class register extends AppCompatActivity {
 
                         dRef = FirebaseDatabase.getInstance("https://imr-rsmmn-default-rtdb.asia-southeast1.firebasedatabase.app/")
                                 .getReference().child("Users").child(et_idCardReg.getText().toString());
-                        dRef.addValueEventListener(new ValueEventListener() {
+                        dRef.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (snapshot.exists()) {
@@ -109,8 +113,12 @@ public class register extends AppCompatActivity {
                                                         snapshot.getRef().child("idcard").setValue(idcard);
                                                         snapshot.getRef().child("email").setValue(email);
                                                         snapshot.getRef().child("password").setValue(password);
+                                                        snapshot.getRef().child("jabatan").setValue(jabatan);
 
+                                                        progressDialog.dismiss();
                                                         Toast.makeText(register.this, "Register Berhasil", Toast.LENGTH_SHORT).show();
+                                                        startActivity(new Intent(register.this, login.class));
+                                                        finish();
                                                     }
                                                 }
                                             });

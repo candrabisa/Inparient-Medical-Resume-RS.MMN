@@ -3,4 +3,59 @@
     <string name="sambutan">Selamat Datang Di</string>
     <string name="sambutan2">Inparient Medical Resume</string>
     <string name="sambutan3">Mohon untuk mengisi beberapa data \n untuk proses data anda</string>
+    <string name="digit_password">0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz</string>
+    <string name="digit_number">0123456789/°</string>
+    <string-array name="jabatan">
+        <item>Admin RM</item>
+        <item>Dokter</item>
+    </string-array>
+    <string-array name="jenis_kelamin">
+        <item>Laki-laki</item>
+        <item>Perempuan</item>
+    </string-array>
+    <string-array name="ruang_perawatan">
+        <item>Dharma II (A)</item>
+        <item>Dharma II (B)</item>
+        <item>Dharma III</item>
+        <item>Dharma IV</item>
+        <item>Dharma V</item>
+        <item>Dharma VI</item>
+        <item>Dharma VII</item>
+        <item>Dharma VIII</item>
+        <item>Dharma IX</item>
+    </string-array>
+    <string-array name="jaminan">
+        <item>UMUM</item>
+        <item>KEMENKES</item>
+        <item>BPJS KESEHATAN</item>
+        <item>BPJS KETENAGAKERJAAN</item>
+        <item>JAMKESDA</item>
+        <item>JAMPERSAL</item>
+        <item>ASURANSI</item>
+    </string-array>
+    <string-array name="kondisi_pasien_pulang">
+        <item>Sembuh</item>
+        <item>Masih sakit</item>
+        <item>Perbaikan</item>
+        <item>Rujuk RS Lain</item>
+        <item>Meninggal</item>
+        <item>APS (Atas Permintaan Sendiri)</item>
+    </string-array>
+    <string-array name="pengobatan_selanjutnya">
+        <item>Puskesmas</item>
+        <item>Poliklinik</item>
+        <item>RS Lain</item>
+        <item>Faskes Pertama</item>
+    </string-array>
+    <string-array name="dokter_penanggung_jawab">
+        <item>dr. Rinaldy Panusunan Lubis, Sp.P</item>
+        <item>dr. Ira, Sp.A</item>
+        <item>dr. Jansu S, Sp.B</item>
+        <item>dr. Frans, Sp.S</item>
+        <item>dr. Hendrik, Sp.OG</item>
+        <item>dr. Eric N, Sp.pD</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

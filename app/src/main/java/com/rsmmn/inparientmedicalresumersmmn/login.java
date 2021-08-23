@@ -53,7 +53,7 @@ public class login extends AppCompatActivity {
                     et_idCardLogin.setError("Belum diisi");
                     et_idCardLogin.setFocusable(true);
                     return;
-                } else if (password.isEmpty() && password.length()<6){
+                } else if (password.isEmpty() || password.length()<6){
                     et_pwLogin.setError("Belum diisi / kurang dari 6 karakter");
                     et_pwLogin.setFocusable(true);
                     return;

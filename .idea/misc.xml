@@ -3,10 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/bg_input_active.xml" value="0.13614864864864865" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/bg_input_dua.xml" value="0.13614864864864865" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/bg_input_satu.xml" value="0.13614864864864865" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/btn_menuutama.xml" value="0.1" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/btn_primary.xml" value="0.1" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/btn_secondary.xml" value="0.1" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
-        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_register.xml" value="0.22" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_identitas_pasien.xml" value="0.1" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_klinis_pasien.xml" value="0.1" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_login.xml" value="0.12" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_menu_utama.xml" value="0.12" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_register.xml" value="0.12" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_started.xml" value="0.1" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/fragment_akun.xml" value="0.16" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/fragment_folder.xml" value="0.25" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/fragment_home.xml" value="0.14" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/menu/navigasi.xml" value="0.16" />
       </map>
     </option>
   </component>
