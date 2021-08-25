@@ -3,22 +3,34 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/bg_btn_folder.xml" value="0.11944444444444445" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/bg_input_active.xml" value="0.13614864864864865" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/bg_input_dua.xml" value="0.13614864864864865" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/bg_input_satu.xml" value="0.13614864864864865" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/bg_table_content_cell.xml" value="0.11597222222222223" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/bg_table_header_cell.xml" value="0.11944444444444445" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/btn_menuutama.xml" value="0.1" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/btn_primary.xml" value="0.1" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/btn_secondary.xml" value="0.1" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.125" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/ic_baseline_done_24.xml" value="0.125" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/drawable/table_content_cell_bg.xml" value="0.11944444444444445" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_caridata_pasien.xml" value="0.1" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_folder_adminrm.xml" value="0.12533783783783783" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_identitas_pasien.xml" value="0.1" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_klinis_pasien.xml" value="0.1" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_login.xml" value="0.12" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_menu_utama.xml" value="0.12" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_register.xml" value="0.12" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_resume_pasien.xml" value="0.12" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/activity_started.xml" value="0.1" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/fragment_akun.xml" value="0.16" />
-        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/fragment_folder.xml" value="0.25" />
-        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/fragment_home.xml" value="0.14" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/fragment_folder.xml" value="0.15" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/item_caridata.xml" value="0.12533783783783783" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/item_folder.xml" value="0.1" />
+        <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/layout/preview_image.xml" value="0.12567567567567567" />
         <entry key="..\:/Users/candr/AndroidStudioProjects/InparientMedicalResumeRSMMN/app/src/main/res/menu/navigasi.xml" value="0.16" />
       </map>
     </option>

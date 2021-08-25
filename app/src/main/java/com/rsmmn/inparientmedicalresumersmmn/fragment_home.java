@@ -20,7 +20,7 @@ import android.widget.LinearLayout;
 
 public class fragment_home extends Fragment {
 
-    LinearLayout btn_idenPasien, btn_dataKlinis;
+    LinearLayout btn_idenPasien, btn_dataKlinis, btn_resumeDokter;
     ImageView btn_back;
 
     @Override
@@ -30,12 +30,22 @@ public class fragment_home extends Fragment {
         btn_idenPasien = view.findViewById(R.id.ll_idenPasien);
         btn_back = view.findViewById(R.id.btn_kembaliMenuUtama);
         btn_dataKlinis = view.findViewById(R.id.ll_dataKlinis);
+        btn_resumeDokter = view.findViewById(R.id.ll_resumeDokter);
+
+        btn_resumeDokter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), resume_pasien.class));
+                getActivity();
+            }
+        });
 
         btn_dataKlinis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), klinis_pasien.class));
-                getActivity();
+                Intent intent = new Intent(getContext(), klinis_pasien.class);
+                intent.putExtra("nomor_rm", "");
+                startActivity(intent);
             }
         });
 
