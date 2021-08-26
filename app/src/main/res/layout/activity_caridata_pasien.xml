@@ -6,183 +6,133 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".caridata_pasien">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <ImageView
+        android:id="@+id/btn_kembaliIdenPasien"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Silahkan cari data pasien rawat inap"
+        android:textColor="@color/orange"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_kembaliIdenPasien" />
 
-            <ImageView
-                android:id="@+id/btn_kembaliIdenPasien"
-                android:layout_width="34dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="12dp"
-                android:src="@drawable/ic_back"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tv1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Silahkan cari data pasien rawat inap"
-                android:textColor="@color/orange"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_kembaliIdenPasien" />
-
-            <RelativeLayout
-                android:id="@+id/linearLayout8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv1">
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="52dp"
-                    android:src="@drawable/ic_caridata" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:boxBackgroundColor="@color/white"
-                    android:layout_toEndOf="@+id/imageView2"
-                    android:layout_toRightOf="@id/imageView2">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_cariPasien"
-                        android:layout_width="240dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:imeOptions="actionSearch"
-                        android:singleLine="true"
-                        android:hint="Cari No.RM/Nama Pasien"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-            </RelativeLayout>
-
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="492dp"
-                android:scrollbars="none"
-                android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout8"
-                android:orientation="vertical">
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-                        android:id="@+id/linearLayout10"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginEnd="24dp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
-                        <TextView
-                            android:id="@+id/tv_jck1"
-                            android:layout_width="140dp"
-                            android:layout_height="match_parent"
-                            android:text="No RM"
-                            android:background="@drawable/bg_table_header_cell"/>
-
-                        <TextView
-                            android:layout_width="180dp"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_table_header_cell"
-                            android:text="Nama Pasien"/>
-
-                        <TextView
-                            android:layout_width="140dp"
-                            android:layout_height="match_parent"
-                            android:text="Tgl Lahir"
-                            android:background="@drawable/bg_table_header_cell"/>
-
-                        <TextView
-                            android:layout_width="140dp"
-                            android:layout_height="match_parent"
-                            android:text="Tgl Masuk"
-                            android:background="@drawable/bg_table_header_cell"/>
-
-                        <TextView
-                            android:layout_width="140dp"
-                            android:layout_height="match_parent"
-                            android:text="Tgl Keluar"
-                            android:background="@drawable/bg_table_header_cell"/>
-
-                        <TextView
-                            android:id="@+id/tv_jck"
-                            android:layout_width="120dp"
-                            android:layout_height="match_parent"
-                            android:text="Ruangan"
-                            android:background="@drawable/bg_table_header_cell"/>
-                    </LinearLayout>
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_cariDataPasien"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@id/linearLayout10"
-                        tools:listitem="@layout/item_folder" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </HorizontalScrollView>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/linearLayout9"
+    <RelativeLayout
+        android:id="@+id/linearLayout8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:gravity="center_horizontal"
-        android:padding="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv1">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_ubahDataPasien"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:backgroundTint="@color/gray_edittext"
-            android:text="ubah data pasien"
-            android:textColor="@color/white" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="52dp"
+            android:src="@drawable/ic_caridata" />
 
-        <Space
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            app:boxBackgroundColor="@color/white"
+            android:layout_toEndOf="@+id/imageView2"
+            android:layout_toRightOf="@id/imageView2">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_cariPasien"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:hint="Cari No.RM/Nama Pasien"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_lanjutkanDataKlinis"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:backgroundTint="@color/orange"
-            android:text="Lanjutkan Data Klinis"
-            android:textColor="@color/white" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_lanjutkanDataResume"
-            android:layout_width="120dp"
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout8">
+        <HorizontalScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:backgroundTint="@color/orange"
-            android:text="Lanjutkan Resume"
-            android:textColor="@color/white" />
-    </LinearLayout>
+            android:scrollbars="none"
+            android:paddingBottom="160dp"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:id="@+id/linearLayout10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+                    <TextView
+                        android:id="@+id/tv_jck1"
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:text="No RM"
+                        android:background="@drawable/bg_table_header_cell"/>
+
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_table_header_cell"
+                        android:text="Nama Pasien"/>
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:text="Tgl Lahir"
+                        android:background="@drawable/bg_table_header_cell"/>
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:text="Tgl Masuk"
+                        android:background="@drawable/bg_table_header_cell"/>
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:text="Tgl Keluar"
+                        android:background="@drawable/bg_table_header_cell"/>
+
+                    <TextView
+                        android:id="@+id/tv_jck"
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:text="Ruangan"
+                        android:background="@drawable/bg_table_header_cell"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_cariDataPasien"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/linearLayout10"
+                    tools:listitem="@layout/item_folder" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </HorizontalScrollView>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

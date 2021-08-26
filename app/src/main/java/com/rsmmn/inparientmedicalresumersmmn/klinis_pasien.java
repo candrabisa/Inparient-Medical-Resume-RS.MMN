@@ -10,6 +10,7 @@ import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -47,6 +48,9 @@ public class klinis_pasien extends AppCompatActivity {
     Button btn_simpanKlinis;
     ImageView iv_doneHasilPenunjang, iv_doneHasilRadio, iv_doneHasilLabo;
 
+    String norm_ = "norm";
+    String norm = "";
+    String normkey = "";
 
     DatabaseReference dRef;
     StorageReference sPref;
@@ -276,28 +280,5 @@ public class klinis_pasien extends AppCompatActivity {
             lokasi_foto2 = data.getData();
             iv_doneHasilPenunjang.setVisibility(View.VISIBLE);
         }
-//        switch (requestCode){
-//            case request_pertama:
-//                if (resultCode == Activity.RESULT_OK){
-//                    assert data != null;
-//                    lokasi_foto = data.getData();
-//                    iv_doneHasilLabo.setVisibility(View.VISIBLE);
-//                }
-//                break;
-//            case request_kedua:
-//                if (resultCode == Activity.RESULT_OK){
-//                    assert data != null;
-//                    lokasi_foto1 = data.getData();
-//                    iv_doneHasilRadio.setVisibility(View.VISIBLE);
-//                }
-//                break;
-//            case request_ketiga:
-//                if (resultCode == Activity.RESULT_OK){
-//                    assert data != null;
-//                    lokasi_foto2 = data.getData();
-//                    iv_doneHasilPenunjang.setVisibility(View.VISIBLE);
-//                }
-//                break;
-//            }
     }
 }

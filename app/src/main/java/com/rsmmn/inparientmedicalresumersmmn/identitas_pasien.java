@@ -160,6 +160,11 @@ public class identitas_pasien extends AppCompatActivity {
                                 dialog.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
+                                        Intent intentNext = new Intent(identitas_pasien.this, klinis_pasien.class);
+                                        intentNext.putExtra("nomor_rm", nomor_rm);
+                                        startActivity(intentNext);
+                                        dialog.dismiss();
+
                                         et_noRmIdenPasien.setText("");
                                         et_namaIdenPasien.setText("");
                                         et_tglLahirIdenPasien.setText("");
@@ -168,10 +173,7 @@ public class identitas_pasien extends AppCompatActivity {
                                         et_tglKeluarIdenPasien.setText("");
                                         et_noRmIdenPasien.setFocusable(true);
 
-                                        Intent intentNext = new Intent(identitas_pasien.this, klinis_pasien.class);
-                                        intentNext.putExtra("nomor_rm", nomor_rm);
-                                        startActivity(intentNext);
-                                        dialog.dismiss();
+
                                     }
                                 });
                                 dialog.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {

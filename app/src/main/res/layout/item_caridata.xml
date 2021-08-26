@@ -6,13 +6,6 @@
     android:layout_marginStart="24dp"
     android:layout_marginEnd="24dp">
 
-<!--    <TextView-->
-<!--        android:id="@+id/tv_noUrutCari"-->
-<!--        android:layout_width="60dp"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:background="@drawable/bg_table_content_cell"-->
-<!--        android:text="NO"/>-->
-
     <TextView
         android:id="@+id/tv_noRmCari"
         android:layout_width="140dp"

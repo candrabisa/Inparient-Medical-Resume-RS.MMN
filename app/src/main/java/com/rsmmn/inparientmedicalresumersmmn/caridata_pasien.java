@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -18,7 +20,9 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,10 +42,7 @@ public class caridata_pasien extends AppCompatActivity {
     RecyclerView rv_cariData;
     List<Model_IdentitasPasien> listPasienModel = new ArrayList<>();
     Adapter_IdentitasPasien listPasienAdapter;
-
     EditText et_cariPasien;
-    Button btn_lanjutkanDataResume;
-
     DatabaseReference dRef;
 
     @Override
@@ -50,13 +51,11 @@ public class caridata_pasien extends AppCompatActivity {
         setContentView(R.layout.activity_caridata_pasien);
 
         et_cariPasien = findViewById(R.id.et_cariPasien);
-        btn_lanjutkanDataResume = findViewById(R.id.btn_lanjutkanDataResume);
-        btn_lanjutkanDataResume.setVisibility(View.GONE);
-
         rv_cariData = findViewById(R.id.rv_cariDataPasien);
         rv_cariData.setLayoutManager(new LinearLayoutManager(this));
 
         loadDataPasien();
+
 
         et_cariPasien.addTextChangedListener(new TextWatcher() {
             @Override
