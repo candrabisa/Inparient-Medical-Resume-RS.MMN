@@ -34,36 +34,36 @@ public class Adapter_IdentitasPasien extends RecyclerView.Adapter<Adapter_Identi
     @Override
     public void onBindViewHolder(@NonNull Adapter_IdentitasPasien.MyHolder holder, int position) {
 //        MyHolder myHolder = (MyHolder) holder;
-        int posisiRow = holder.getAdapterPosition();
-        Integer nomor_urut = 0;
-
-        if (position == 0){
+//        int posisiRow = holder.getAdapterPosition();
+//        Integer nomor_urut = 0;
+//
+//        if (position == 0){
 //            holder.tv_noUrutCari.setBackgroundResource(R.drawable.bg_table_header_cell);
-            holder.tv_noRmCari.setBackgroundResource(R.drawable.bg_table_header_cell);
-            holder.tv_namaPasienCari.setBackgroundResource(R.drawable.bg_table_header_cell);
-            holder.tv_tglLahirCari.setBackgroundResource(R.drawable.bg_table_header_cell);
-            holder.tv_TglMasukCari.setBackgroundResource(R.drawable.bg_table_header_cell);
-            holder.tv_TglKeluarCari.setBackgroundResource(R.drawable.bg_table_header_cell);
-            holder.tv_ruanganCari.setBackgroundResource(R.drawable.bg_table_header_cell);
-
+//            holder.tv_noRmCari.setBackgroundResource(R.drawable.bg_table_header_cell);
+//            holder.tv_namaPasienCari.setBackgroundResource(R.drawable.bg_table_header_cell);
+//            holder.tv_tglLahirCari.setBackgroundResource(R.drawable.bg_table_header_cell);
+//            holder.tv_TglMasukCari.setBackgroundResource(R.drawable.bg_table_header_cell);
+//            holder.tv_TglKeluarCari.setBackgroundResource(R.drawable.bg_table_header_cell);
+//            holder.tv_ruanganCari.setBackgroundResource(R.drawable.bg_table_header_cell);
+//
 //            holder.tv_noUrutCari.setText("NO");
-            holder.tv_namaPasienCari.setText("Nama Pasien");
-            holder.tv_tglLahirCari.setText("Tgl Lahir");
-            holder.tv_TglMasukCari.setText("Tgl Masuk");
-            holder.tv_TglKeluarCari.setText("Tgl Keluar");
-            holder.tv_ruanganCari.setText("Ruangan");
-        } else {
+//            holder.tv_namaPasienCari.setText("Nama Pasien");
+//            holder.tv_tglLahirCari.setText("Tgl Lahir");
+//            holder.tv_TglMasukCari.setText("Tgl Masuk");
+//            holder.tv_TglKeluarCari.setText("Tgl Keluar");
+//            holder.tv_ruanganCari.setText("Ruangan");
+//        } else {
 //            for (int i = 0;i<=nomor_urut; i++){
 //                int nomerUrut = i+1;
 //
 //            }
 //                final int nomer_urut = modelIdentitasPasiens.get(position -1).getNomor_urut();
-            final String nama_pasien = modelIdentitasPasiens.get(position -1 ).getNama_pasien();
-            final String no_rm = modelIdentitasPasiens.get(position -1 ).getNomor_rm();
-            final String tgl_lahir = modelIdentitasPasiens.get(position -1 ).getTgl_lahir_pasien();
-            final String tgl_masuk = modelIdentitasPasiens.get(position -1).getTgl_masuk_pasien();
-            final String tgl_keluar = modelIdentitasPasiens.get(position -1).getTgl_keluar_pasien();
-            final String ruang_perawatan = modelIdentitasPasiens.get(position -1).getRuang_perawatan_pasien();
+            final String nama_pasien = modelIdentitasPasiens.get(position).getNama_pasien();
+            final String no_rm = modelIdentitasPasiens.get(position ).getNomor_rm();
+            final String tgl_lahir = modelIdentitasPasiens.get(position).getTgl_lahir_pasien();
+            final String tgl_masuk = modelIdentitasPasiens.get(position).getTgl_masuk_pasien();
+            final String tgl_keluar = modelIdentitasPasiens.get(position).getTgl_keluar_pasien();
+            final String ruang_perawatan = modelIdentitasPasiens.get(position).getRuang_perawatan_pasien();
 
 //            holder.tv_noUrutCari.setText(String.valueOf(nomerUrut));
             holder.tv_namaPasienCari.setText(nama_pasien);
@@ -73,7 +73,7 @@ public class Adapter_IdentitasPasien extends RecyclerView.Adapter<Adapter_Identi
             holder.tv_TglMasukCari.setText(tgl_masuk);
             holder.tv_ruanganCari.setText(ruang_perawatan);
 
-        }
+//        }
 
 
     }
