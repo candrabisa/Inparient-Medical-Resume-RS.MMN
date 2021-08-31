@@ -9,11 +9,13 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -30,8 +32,10 @@ public class fragment_akun extends Fragment {
     Button btn_batalEditAkun, btn_SimpanEditAkun, btn_LogoutAkun, btn_editAkun;
     EditText et_passwordAkun, et_emailAkun, et_idCardAkun, et_namaLengkapAkun;
     Spinner sp_jabatanAkun;
+    ImageView btn_kembaliMenuAkun;
 
     DatabaseReference dRef, dRef1;
+    private boolean keluar = false;
 
     String userkey_ = "userkey";
     String userkey = "";
@@ -47,6 +51,7 @@ public class fragment_akun extends Fragment {
         btn_SimpanEditAkun = view.findViewById(R.id.btn_SimpanEditAkun);
         btn_LogoutAkun = view.findViewById(R.id.btn_LogoutAkun);
         btn_editAkun = view.findViewById(R.id.btn_editAkun);
+        btn_kembaliMenuAkun = view.findViewById(R.id.btn_kembaliMenuAkun);
 
         et_passwordAkun = view.findViewById(R.id.et_passwordAkun);
         et_emailAkun = view.findViewById(R.id.et_emailAkun);
@@ -98,6 +103,24 @@ public class fragment_akun extends Fragment {
                 editor.apply();
                 startActivity(new Intent(getContext(), dashboard.class));
                 getActivity().finish();
+            }
+        });
+
+        btn_kembaliMenuAkun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (keluar){
+                    getActivity().finish();
+                    System.exit(0);
+                } else {
+                    Toast.makeText(getContext(), "Tekan back sekali lagi untuk keluar", Toast.LENGTH_SHORT).show();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            keluar = true;
+                        }
+                    }, 1000);
+                }
             }
         });
 

@@ -76,7 +76,6 @@ public class identitas_pasien extends AppCompatActivity {
         sp_ruangPerawatan = findViewById(R.id.sp_ruangPerawatan);
         sp_Jaminan = findViewById(R.id.sp_Jaminan);
 
-
         dRef = FirebaseDatabase.getInstance("https://imr-rsmmn-default-rtdb.asia-southeast1.firebasedatabase.app/")
                 .getReference("Users").child(userkekey);
         dRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -142,55 +141,89 @@ public class identitas_pasien extends AppCompatActivity {
                         dRef1.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                snapshot.getRef().child("nomor_rm").setValue(nomor_rm);
-                                snapshot.getRef().child("nama_pasien").setValue(nama_pasien);
-                                snapshot.getRef().child("tgl_lahir_pasien").setValue(tgl_lahir_pasien);
-                                snapshot.getRef().child("jenis_kelamin_pasien").setValue(jenis_kelamin_pasien);
-                                snapshot.getRef().child("umur_pasien").setValue(umur_pasien);
-                                snapshot.getRef().child("tgl_masuk_pasien").setValue(tgl_masuk_pasien);
-                                snapshot.getRef().child("tgl_keluar_pasien").setValue(tgl_keluar_pasien);
-                                snapshot.getRef().child("ruang_perawatan_pasien").setValue(ruang_perawatan_pasien);
-                                snapshot.getRef().child("jaminan_pasien").setValue(jaminan_pasien);
-                                snapshot.getRef().child("nama_admin_rm").setValue(nama_admin_rm);
+                                if (snapshot.exists()){
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(identitas_pasien.this);
+                                    builder.setTitle("No. RM Telah Digunakan!!");
+                                    builder.setMessage("No. RM sudah ada atau telah digunakan, mohon mengganti No. RM yang lain");
+                                    builder.setPositiveButton("OKE", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.cancel();
+                                        }
+                                    });
+                                } else {
+                                    snapshot.getRef().child("nomor_rm").setValue(nomor_rm);
+                                    snapshot.getRef().child("nama_pasien").setValue(nama_pasien);
+                                    snapshot.getRef().child("tgl_lahir_pasien").setValue(tgl_lahir_pasien);
+                                    snapshot.getRef().child("jenis_kelamin_pasien").setValue(jenis_kelamin_pasien);
+                                    snapshot.getRef().child("umur_pasien").setValue(umur_pasien);
+                                    snapshot.getRef().child("tgl_masuk_pasien").setValue(tgl_masuk_pasien);
+                                    snapshot.getRef().child("tgl_keluar_pasien").setValue(tgl_keluar_pasien);
+                                    snapshot.getRef().child("ruang_perawatan_pasien").setValue(ruang_perawatan_pasien);
+                                    snapshot.getRef().child("jaminan_pasien").setValue(jaminan_pasien);
+                                    snapshot.getRef().child("nama_admin_rm").setValue(nama_admin_rm);
 
-                                progressDialog.dismiss();
-                                AlertDialog.Builder dialog = new AlertDialog.Builder(identitas_pasien.this);
-                                dialog.setTitle("Success");
-                                dialog.setMessage("Data berhasil disimpan, apakah ingin melanjutkan input data KLINIS PASIEN?");
-                                dialog.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        Intent intentNext = new Intent(identitas_pasien.this, klinis_pasien.class);
-                                        intentNext.putExtra("nomor_rm", nomor_rm);
-                                        startActivity(intentNext);
-                                        dialog.dismiss();
+                                    progressDialog.dismiss();
+                                    AlertDialog.Builder dialog = new AlertDialog.Builder(identitas_pasien.this);
+                                    dialog.setTitle("Success");
+                                    dialog.setMessage("Data berhasil disimpan, apakah ingin melanjutkan input data KLINIS PASIEN?");
+                                    dialog.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            Intent intentNext = new Intent(identitas_pasien.this, klinis_pasien.class);
+                                            intentNext.putExtra("nomor_rm", nomor_rm);
+                                            startActivity(intentNext);
+                                            dialog.dismiss();
 
-                                        et_noRmIdenPasien.setText("");
-                                        et_namaIdenPasien.setText("");
-                                        et_tglLahirIdenPasien.setText("");
-                                        et_umurIdenPasien.setText("");
-                                        et_tglMasukIdenPasien.setText("");
-                                        et_tglKeluarIdenPasien.setText("");
-                                        et_noRmIdenPasien.setFocusable(true);
+                                            et_noRmIdenPasien.setText("");
+                                            et_namaIdenPasien.setText("");
+                                            et_tglLahirIdenPasien.setText("");
+                                            et_umurIdenPasien.setText("");
+                                            et_tglMasukIdenPasien.setText("");
+                                            et_tglKeluarIdenPasien.setText("");
+                                            et_noRmIdenPasien.setFocusable(true);
+                                        }
+                                    });
+                                    dialog.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            et_noRmIdenPasien.setText("");
+                                            et_namaIdenPasien.setText("");
+                                            et_tglLahirIdenPasien.setText("");
+                                            et_umurIdenPasien.setText("");
+                                            et_tglMasukIdenPasien.setText("");
+                                            et_tglKeluarIdenPasien.setText("");
+                                            et_noRmIdenPasien.setFocusable(true);
+                                            dialog.dismiss();
+                                        }
+                                    });
+                                    dialog.show();
+                                    et_noRmIdenPasien.setFocusable(true);
 
+                                    dRef = FirebaseDatabase.getInstance("https://imr-rsmmn-default-rtdb.asia-southeast1.firebasedatabase.app/")
+                                            .getReference("folderPasien").child(nomor_rm);
+                                    dRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            snapshot.getRef().child("nomor_rm").setValue(nomor_rm);
+                                            snapshot.getRef().child("nama_pasien").setValue(nama_pasien);
+                                            snapshot.getRef().child("tgl_lahir_pasien").setValue(tgl_lahir_pasien);
+                                            snapshot.getRef().child("jenis_kelamin_pasien").setValue(jenis_kelamin_pasien);
+                                            snapshot.getRef().child("umur_pasien").setValue(umur_pasien);
+                                            snapshot.getRef().child("tgl_masuk_pasien").setValue(tgl_masuk_pasien);
+                                            snapshot.getRef().child("tgl_keluar_pasien").setValue(tgl_keluar_pasien);
+                                            snapshot.getRef().child("ruang_perawatan_pasien").setValue(ruang_perawatan_pasien);
+                                            snapshot.getRef().child("jaminan_pasien").setValue(jaminan_pasien);
+                                            snapshot.getRef().child("nama_admin_rm").setValue(nama_admin_rm);
+                                        }
 
-                                    }
-                                });
-                                dialog.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        et_noRmIdenPasien.setText("");
-                                        et_namaIdenPasien.setText("");
-                                        et_tglLahirIdenPasien.setText("");
-                                        et_umurIdenPasien.setText("");
-                                        et_tglMasukIdenPasien.setText("");
-                                        et_tglKeluarIdenPasien.setText("");
-                                        et_noRmIdenPasien.setFocusable(true);
-                                        dialog.dismiss();
-                                    }
-                                });
-                                dialog.show();
-                                et_noRmIdenPasien.setFocusable(true);
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
+                                }
+
                             }
 
                             @Override
@@ -198,6 +231,7 @@ public class identitas_pasien extends AppCompatActivity {
 
                             }
                         });
+
                     }
                 }catch (Exception e){
                     Toast.makeText(identitas_pasien.this, "Sedang mengalami gangguan karena" + e.getMessage(), Toast.LENGTH_SHORT).show();

@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,6 +28,22 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+//import com.opencsv.CSVWriter;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+import jxl.Workbook;
+import jxl.WorkbookSettings;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import jxl.write.WriteException;
+import jxl.write.biff.RowsExceededException;
 
 public class register extends AppCompatActivity {
 
@@ -54,7 +71,7 @@ public class register extends AppCompatActivity {
         sp_jabatan = findViewById(R.id.sp_jabatanReg);
 
         fAuth = FirebaseAuth.getInstance();
-
+        String csv = (Environment.getExternalStorageDirectory().getAbsolutePath() + "/MyCsvFile.csv");
         btn_daftarReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,9 +133,6 @@ public class register extends AppCompatActivity {
                                                         snapshot.getRef().child("jabatan").setValue(jabatan);
 
                                                         progressDialog.dismiss();
-                                                        Toast.makeText(register.this, "Register Berhasil", Toast.LENGTH_SHORT).show();
-                                                        startActivity(new Intent(register.this, login.class));
-                                                        finish();
                                                     }
                                                 }
                                             });
@@ -144,6 +158,11 @@ public class register extends AppCompatActivity {
                 finish();
             }
         });
+
+    }
+
+    private void createExcelSheet(){
+
 
     }
 }

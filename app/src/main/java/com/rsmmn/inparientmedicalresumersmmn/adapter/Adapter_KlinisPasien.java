@@ -1,38 +1,34 @@
 package com.rsmmn.inparientmedicalresumersmmn.adapter;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.rsmmn.inparientmedicalresumersmmn.R;
-import com.rsmmn.inparientmedicalresumersmmn.caridata_pasien;
 import com.rsmmn.inparientmedicalresumersmmn.klinis_pasien;
-import com.rsmmn.inparientmedicalresumersmmn.model.Model_IdentitasPasien;
+import com.rsmmn.inparientmedicalresumersmmn.model.Model_KlinisPasien;
+import com.rsmmn.inparientmedicalresumersmmn.resume_pasien;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Adapter_IdentitasPasien extends RecyclerView.Adapter<Adapter_IdentitasPasien.MyHolder> {
+public class Adapter_KlinisPasien extends RecyclerView.Adapter<Adapter_KlinisPasien.MyHolder> {
 
     Context context;
-    List<Model_IdentitasPasien>modelIdentitasPasiens;
+    List<Model_KlinisPasien> modelKlinisPasiens = new ArrayList<>();
     int dipencet = -1;
 
-    public Adapter_IdentitasPasien(Context context, List<Model_IdentitasPasien> modelIdentitasPasiens) {
+    public Adapter_KlinisPasien(Context context, List<Model_KlinisPasien> modelKlinisPasiens) {
         this.context = context;
-        this.modelIdentitasPasiens = modelIdentitasPasiens;
+        this.modelKlinisPasiens = modelKlinisPasiens;
     }
 
     @NonNull
@@ -43,14 +39,13 @@ public class Adapter_IdentitasPasien extends RecyclerView.Adapter<Adapter_Identi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Adapter_IdentitasPasien.MyHolder holder, @SuppressLint("RecyclerView") int position) {
-
-        final String nama_pasien = modelIdentitasPasiens.get(position).getNama_pasien();
-        final String no_rm = modelIdentitasPasiens.get(position).getNomor_rm();
-        final String tgl_lahir = modelIdentitasPasiens.get(position).getTgl_lahir_pasien();
-        final String tgl_masuk = modelIdentitasPasiens.get(position).getTgl_masuk_pasien();
-        final String tgl_keluar = modelIdentitasPasiens.get(position).getTgl_keluar_pasien();
-        final String ruang_perawatan = modelIdentitasPasiens.get(position).getRuang_perawatan_pasien();
+    public void onBindViewHolder(@NonNull Adapter_KlinisPasien.MyHolder holder, @SuppressLint("RecyclerView") int position) {
+        final String nama_pasien = modelKlinisPasiens.get(position).getNama_pasien();
+        final String no_rm = modelKlinisPasiens.get(position).getNomor_rm();
+        final String tgl_lahir = modelKlinisPasiens.get(position).getTgl_lahir_pasien();
+        final String tgl_masuk = modelKlinisPasiens.get(position).getTgl_masuk_pasien();
+        final String tgl_keluar = modelKlinisPasiens.get(position).getTgl_keluar_pasien();
+        final String ruang_perawatan = modelKlinisPasiens.get(position).getRuang_perawatan_pasien();
 
         holder.tv_namaPasienCari.setText(nama_pasien);
         holder.tv_noRmCari.setText(no_rm);
@@ -66,13 +61,8 @@ public class Adapter_IdentitasPasien extends RecyclerView.Adapter<Adapter_Identi
                 notifyDataSetChanged();
 
                 Log.d("cek1", no_rm);
-                Intent intent = new Intent(context, klinis_pasien.class);
+                Intent intent = new Intent(context, resume_pasien.class);
                 intent.putExtra("nomor_rm", no_rm);
-//                intent.putExtra("nama_pasien", nama_pasien);
-//                intent.putExtra("tgl_lahir", tgl_lahir);
-//                intent.putExtra("tgl_masuk", tgl_masuk);
-//                intent.putExtra("tgl_keluar", tgl_keluar);
-//                intent.putExtra("ruang_perawatan", ruang_perawatan);
                 context.startActivity(intent);
 
             }
@@ -86,7 +76,6 @@ public class Adapter_IdentitasPasien extends RecyclerView.Adapter<Adapter_Identi
             holder.tv_TglMasukCari.setBackgroundResource(R.drawable.bg_table_content_dipencet);
             holder.tv_TglKeluarCari.setBackgroundResource(R.drawable.bg_table_content_dipencet);
             holder.tv_ruanganCari.setBackgroundResource(R.drawable.bg_table_content_dipencet);
-
         } else {
             holder.tv_noRmCari.setBackgroundResource(R.drawable.bg_table_content_cell);
             holder.tv_namaPasienCari.setBackgroundResource(R.drawable.bg_table_content_cell);
@@ -95,12 +84,11 @@ public class Adapter_IdentitasPasien extends RecyclerView.Adapter<Adapter_Identi
             holder.tv_TglKeluarCari.setBackgroundResource(R.drawable.bg_table_content_cell);
             holder.tv_ruanganCari.setBackgroundResource(R.drawable.bg_table_content_cell);
         }
-
     }
 
     @Override
     public int getItemCount() {
-        return modelIdentitasPasiens.size();
+        return modelKlinisPasiens.size();
     }
 
     static class MyHolder extends RecyclerView.ViewHolder {
@@ -117,7 +105,6 @@ public class Adapter_IdentitasPasien extends RecyclerView.Adapter<Adapter_Identi
             tv_TglMasukCari = itemView.findViewById(R.id.tv_TglMasukCari);
             tv_TglKeluarCari = itemView.findViewById(R.id.tv_TglKeluarCari);
             tv_ruanganCari = itemView.findViewById(R.id.tv_ruanganCari);
-
         }
     }
 }

@@ -1,16 +1,20 @@
 package com.rsmmn.inparientmedicalresumersmmn.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.rsmmn.inparientmedicalresumersmmn.caridata_pasien;
 
 import java.util.List;
 
-public class Model_IdentitasPasien {
+public class Model_IdentitasPasien implements Parcelable {
 
     long nomor_urut;
     String nama_pasien, nomor_rm, tgl_lahir_pasien,
             tgl_masuk_pasien, tgl_keluar_pasien, ruang_perawatan_pasien;
 
     public Model_IdentitasPasien() {
+
     }
 
     public Model_IdentitasPasien(long nomor_urut, String nama_pasien, String nomor_rm, String tgl_lahir_pasien, String tgl_masuk_pasien, String tgl_keluar_pasien, String ruang_perawatan_pasien) {
@@ -22,6 +26,18 @@ public class Model_IdentitasPasien {
         this.tgl_keluar_pasien = tgl_keluar_pasien;
         this.ruang_perawatan_pasien = ruang_perawatan_pasien;
     }
+
+    public static final Creator<Model_IdentitasPasien> CREATOR = new Creator<Model_IdentitasPasien>() {
+        @Override
+        public Model_IdentitasPasien createFromParcel(Parcel in) {
+            return new Model_IdentitasPasien(in);
+        }
+
+        @Override
+        public Model_IdentitasPasien[] newArray(int size) {
+            return new Model_IdentitasPasien[size];
+        }
+    };
 
     public long getNomor_urut() {
         return nomor_urut;
@@ -77,5 +93,31 @@ public class Model_IdentitasPasien {
 
     public void setRuang_perawatan_pasien(String ruang_perawatan_pasien) {
         this.ruang_perawatan_pasien = ruang_perawatan_pasien;
+    }
+
+    protected Model_IdentitasPasien(Parcel in) {
+        nomor_urut = in.readLong();
+        nama_pasien = in.readString();
+        nomor_rm = in.readString();
+        tgl_lahir_pasien = in.readString();
+        tgl_masuk_pasien = in.readString();
+        tgl_keluar_pasien = in.readString();
+        ruang_perawatan_pasien = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(nomor_urut);
+        dest.writeString(nama_pasien);
+        dest.writeString(nomor_rm);
+        dest.writeString(tgl_lahir_pasien);
+        dest.writeString(tgl_masuk_pasien);
+        dest.writeString(tgl_keluar_pasien);
+        dest.writeString(ruang_perawatan_pasien);
     }
 }

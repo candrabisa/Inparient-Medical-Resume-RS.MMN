@@ -7,11 +7,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 
 /**
@@ -22,6 +24,8 @@ public class fragment_home extends Fragment {
 
     LinearLayout btn_idenPasien, btn_dataKlinis, btn_resumeDokter;
     ImageView btn_back;
+
+    private boolean keluar = false;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -35,8 +39,9 @@ public class fragment_home extends Fragment {
         btn_resumeDokter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), resume_pasien.class));
-                getActivity();
+                Intent intent = new Intent(getContext(), resume_pasien.class);
+                intent.putExtra("nomor_rm", "");
+                startActivity(intent);
             }
         });
 
@@ -60,7 +65,18 @@ public class fragment_home extends Fragment {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().finish();
+                if (keluar){
+                    getActivity().finish();
+                    System.exit(0);
+                } else {
+                    Toast.makeText(getContext(), "Tekan back sekali lagi untuk keluar", Toast.LENGTH_SHORT).show();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            keluar = true;
+                        }
+                    }, 1000);
+                }
             }
         });
 
