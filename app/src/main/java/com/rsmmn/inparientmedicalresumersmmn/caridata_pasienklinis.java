@@ -132,7 +132,6 @@ public class caridata_pasienklinis extends AppCompatActivity {
 
                 }
                 adapterKlinisPasien = new Adapter_KlinisPasien(caridata_pasienklinis.this, modelKlinisPasiens);
-                adapterKlinisPasien.notifyDataSetChanged();
                 rv_cariPasienKlinis.setAdapter(adapterKlinisPasien);
             }
 

@@ -78,8 +78,8 @@ public class caridata_pasien extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (!TextUtils.isEmpty(s.toString().trim())){
-                    cariPasien(s.getFilters().toString().trim());
+                if (!TextUtils.isEmpty(s.toString())){
+                    cariPasien(s.toString());
                 } else {
                     loadDataPasien();
                 }

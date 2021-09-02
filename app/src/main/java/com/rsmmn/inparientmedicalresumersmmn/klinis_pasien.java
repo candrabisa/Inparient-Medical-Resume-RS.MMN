@@ -53,15 +53,10 @@ public class klinis_pasien extends AppCompatActivity {
     ImageView iv_doneHasilPenunjang, iv_doneHasilRadio, iv_doneHasilLabo
             ,btn_kembaliKlinisPasien;
 
-    String norm_ = "norm";
-    String norm = "";
-    String normkey = "";
-
     DatabaseReference dRef, dRef1;
     StorageReference sPref;
     Uri lokasi_foto, lokasi_foto1, lokasi_foto2;
 
-    int requestCode;
     private final int request_pertama = 1;
     private final int request_kedua = 2;
     private final int request_ketiga = 3;
@@ -100,13 +95,34 @@ public class klinis_pasien extends AppCompatActivity {
         et_spo2Pasien = findViewById(R.id.et_spo2Pasien);
         et_pupilPasien = findViewById(R.id.et_pupilPasien);
 
-        Bundle bundle = getIntent().getExtras();
-        final String nomor_rm = bundle.getString("nomor_rm");
-//        final String nama_pasien = bundle.getString("nama_pasien");
-//        final String tgl_lahir = bundle.getString("tgl_lahir");
-//        final String tgl_masuk = bundle.getString("tgl_masuk");
-//        final String ruang_perawatan = bundle.getString("ruang_perawatan");
-        et_nomorRmKlinis.setText(nomor_rm);
+        try {
+            Bundle bundle = getIntent().getExtras();
+            if (bundle != null){
+                final String norm = bundle.getString("no_rm");
+                final String alergi = bundle.getString("alergi");
+                final String diagnosis_awal = bundle.getString("diagnosis_awal");
+                final String ttd1 = bundle.getString("ttd1");
+                final String ttd2 = bundle.getString("ttd2");
+                final String nadi = bundle.getString("nadi");
+                final String resusitasi = bundle.getString("resusitasi");
+                final String suhu = bundle.getString("suhu");
+                final String spo2 = bundle.getString("spo2");
+                final String pupil = bundle.getString("pupil");
+
+                et_nomorRmKlinis.setText(norm);
+                et_alergiPasien.setText(alergi);
+                et_diagnosaAwalPasien.setText(diagnosis_awal);
+                et_ttdPasien1.setText(ttd1);
+                et_ttdPasien2.setText(ttd2);
+                et_nadiPasien.setText(nadi);
+                et_resusitasiPasien.setText(resusitasi);
+                et_suhuPasien.setText(suhu);
+                et_spo2Pasien.setText(spo2);
+                et_pupilPasien.setText(pupil);
+            }
+        } catch (Exception e){
+
+        }
 
         et_ttdPasien1.addTextChangedListener(new TextWatcher() {
             @Override
@@ -130,6 +146,7 @@ public class klinis_pasien extends AppCompatActivity {
         btn_simpanKlinis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final String nomor_rm = et_nomorRmKlinis.getText().toString();
                 final String alergi_pasien = et_alergiPasien.getText().toString();
                 final String diagnosa_awal = et_diagnosaAwalPasien.getText().toString();
                 final String ttd_pasien1 = et_ttdPasien1.getText().toString();
@@ -208,7 +225,8 @@ public class klinis_pasien extends AppCompatActivity {
                                                 snapshot.getRef().child("alergi").setValue(alergi_pasien);
                                                 snapshot.getRef().child("diagnosa_awal").setValue(diagnosa_awal);
                                                 snapshot.getRef().child("nadi").setValue(nadi_pasien);
-                                                snapshot.getRef().child("ttd").setValue(ttd_pasien1 + "/" +ttd_pasien2);
+                                                snapshot.getRef().child("ttd1").setValue(ttd_pasien1);
+                                                snapshot.getRef().child("ttd2").setValue(ttd_pasien2);
                                                 snapshot.getRef().child("resusitasi").setValue(resusitasi_pasien);
                                                 snapshot.getRef().child("suhu").setValue(suhu_pasien);
                                                 snapshot.getRef().child("spo2").setValue(spo2_pasien);
@@ -305,7 +323,8 @@ public class klinis_pasien extends AppCompatActivity {
                                                         snapshot.getRef().child("alergi").setValue(alergi_pasien);
                                                         snapshot.getRef().child("diagnosa_awal").setValue(diagnosa_awal);
                                                         snapshot.getRef().child("nadi").setValue(nadi_pasien);
-                                                        snapshot.getRef().child("ttd").setValue(ttd_pasien1 + "/" +ttd_pasien2);
+                                                        snapshot.getRef().child("ttd1").setValue(ttd_pasien1);
+                                                        snapshot.getRef().child("ttd2").setValue(ttd_pasien2);
                                                         snapshot.getRef().child("resusitasi").setValue(resusitasi_pasien);
                                                         snapshot.getRef().child("suhu").setValue(suhu_pasien);
                                                         snapshot.getRef().child("spo2").setValue(spo2_pasien);
@@ -333,7 +352,8 @@ public class klinis_pasien extends AppCompatActivity {
                                         snapshot.getRef().child("alergi").setValue(alergi_pasien);
                                         snapshot.getRef().child("diagnosa_awal").setValue(diagnosa_awal);
                                         snapshot.getRef().child("nadi").setValue(nadi_pasien);
-                                        snapshot.getRef().child("ttd").setValue(ttd_pasien1 + "/" +ttd_pasien2);
+                                        snapshot.getRef().child("ttd1").setValue(ttd_pasien1);
+                                        snapshot.getRef().child("ttd2").setValue(ttd_pasien2);
                                         snapshot.getRef().child("resusitasi").setValue(resusitasi_pasien);
                                         snapshot.getRef().child("suhu").setValue(suhu_pasien);
                                         snapshot.getRef().child("spo2").setValue(spo2_pasien);
@@ -441,7 +461,8 @@ public class klinis_pasien extends AppCompatActivity {
                                                 snapshot.getRef().child("alergi").setValue(alergi_pasien);
                                                 snapshot.getRef().child("diagnosa_awal").setValue(diagnosa_awal);
                                                 snapshot.getRef().child("nadi").setValue(nadi_pasien);
-                                                snapshot.getRef().child("ttd").setValue(ttd_pasien1 + "/" +ttd_pasien2);
+                                                snapshot.getRef().child("ttd1").setValue(ttd_pasien1);
+                                                snapshot.getRef().child("ttd2").setValue(ttd_pasien2);
                                                 snapshot.getRef().child("resusitasi").setValue(resusitasi_pasien);
                                                 snapshot.getRef().child("suhu").setValue(suhu_pasien);
                                                 snapshot.getRef().child("spo2").setValue(spo2_pasien);

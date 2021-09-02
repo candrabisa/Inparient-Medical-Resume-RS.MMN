@@ -62,7 +62,7 @@ public class Adapter_KlinisPasien extends RecyclerView.Adapter<Adapter_KlinisPas
 
                 Log.d("cek1", no_rm);
                 Intent intent = new Intent(context, resume_pasien.class);
-                intent.putExtra("nomor_rm", no_rm);
+                intent.putExtra("no_rm", no_rm);
                 context.startActivity(intent);
 
             }

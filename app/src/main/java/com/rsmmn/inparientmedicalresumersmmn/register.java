@@ -37,13 +37,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import jxl.Workbook;
-import jxl.WorkbookSettings;
-import jxl.write.Label;
-import jxl.write.WritableSheet;
-import jxl.write.WritableWorkbook;
-import jxl.write.WriteException;
-import jxl.write.biff.RowsExceededException;
+//import jxl.Workbook;
+//import jxl.WorkbookSettings;
+//import jxl.write.Label;
+//import jxl.write.WritableSheet;
+//import jxl.write.WritableWorkbook;
+//import jxl.write.WriteException;
+//import jxl.write.biff.RowsExceededException;
 
 public class register extends AppCompatActivity {
 
@@ -158,11 +158,6 @@ public class register extends AppCompatActivity {
                 finish();
             }
         });
-
-    }
-
-    private void createExcelSheet(){
-
 
     }
 }

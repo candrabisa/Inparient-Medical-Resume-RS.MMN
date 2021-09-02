@@ -76,6 +76,92 @@ public class identitas_pasien extends AppCompatActivity {
         sp_ruangPerawatan = findViewById(R.id.sp_ruangPerawatan);
         sp_Jaminan = findViewById(R.id.sp_Jaminan);
 
+        try {
+            Bundle bundle = getIntent().getExtras();
+            if (bundle != null){
+                final String norm = bundle.getString("no_rm");
+                final String nama_pasien = bundle.getString("nama_pasien");
+                final String tgl_lahir = bundle.getString("tgl_lahir");
+                final String jenis_kelamin = bundle.getString("jenis_kelamin");
+                final String umur = bundle.getString("umur");
+                final String tgl_masuk = bundle.getString("tgl_masuk");
+                final String tgl_keluar = bundle.getString("tgl_keluar");
+                final String ruang_perawatan = bundle.getString("ruang_perawatan");
+                final String jaminan = bundle.getString("jaminan");
+
+                et_noRmIdenPasien.setText(norm);
+                et_namaIdenPasien.setText(nama_pasien);
+                et_tglLahirIdenPasien.setText(tgl_lahir);
+                et_umurIdenPasien.setText(umur);
+                et_tglMasukIdenPasien.setText(tgl_masuk);
+                et_tglKeluarIdenPasien.setText(tgl_keluar);
+
+                if (jenis_kelamin.equals("Laki-laki")){
+                    sp_jekelIdenPasien.setSelection(0);
+                } else {
+                    sp_jekelIdenPasien.setSelection(1);
+                }
+
+                switch (ruang_perawatan) {
+                    case "Dharma II (A)":
+                        sp_ruangPerawatan.setSelection(0);
+                        break;
+                    case "Dharma II (B)":
+                        sp_ruangPerawatan.setSelection(1);
+                        break;
+                    case "Dharma III":
+                        sp_ruangPerawatan.setSelection(2);
+                        break;
+                    case "Dharma IV":
+                        sp_ruangPerawatan.setSelection(3);
+                        break;
+                    case "Dharma V":
+                        sp_ruangPerawatan.setSelection(4);
+                        break;
+                    case "Dharma VI":
+                        sp_ruangPerawatan.setSelection(5);
+                        break;
+                    case "Dharma VII":
+                        sp_ruangPerawatan.setSelection(6);
+                        break;
+                    case "Dharma VIII":
+                        sp_ruangPerawatan.setSelection(7);
+                        break;
+                    case "Dharma IX":
+                        sp_ruangPerawatan.setSelection(8);
+                        break;
+                }
+
+                if (jaminan.equals("UMUM")){
+                    sp_Jaminan.setSelection(0);
+                } else if (jaminan.equals("KEMENKES")){
+                    sp_Jaminan.setSelection(1);
+                } else if (jaminan.equals("BPJS KESEHATAN")){
+                    sp_Jaminan.setSelection(2);
+                } else if (jaminan.equals("BPJS KETENAGAKERJAAN")){
+                    sp_Jaminan.setSelection(3);
+                } else if (jaminan.equals("JAMKESDA")){
+                    sp_Jaminan.setSelection(4);
+                } else if (jaminan.equals("JAMPERSAL")){
+                    sp_Jaminan.setSelection(5);
+                } else {
+                    sp_Jaminan.setSelection(6);
+                }
+            } else {
+                et_noRmIdenPasien.setText("");
+                et_namaIdenPasien.setText("");
+                et_tglLahirIdenPasien.setText("");
+                et_umurIdenPasien.setText("");
+                et_tglMasukIdenPasien.setText("");
+                et_tglKeluarIdenPasien.setText("");
+                sp_jekelIdenPasien.setSelection(0);
+                sp_ruangPerawatan.setSelection(0);
+                sp_Jaminan.setSelection(0);
+            }
+        }catch (Exception e){
+
+        }
+
         dRef = FirebaseDatabase.getInstance("https://imr-rsmmn-default-rtdb.asia-southeast1.firebasedatabase.app/")
                 .getReference("Users").child(userkekey);
         dRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -249,7 +335,7 @@ public class identitas_pasien extends AppCompatActivity {
                 calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
                 String formatTgl = "dd-MMMM-yyyy";
-                SimpleDateFormat sdf = new SimpleDateFormat(formatTgl, Locale.getDefault());
+                SimpleDateFormat sdf = new SimpleDateFormat(formatTgl, Locale.US);
                 et_tglLahirIdenPasien.setText(sdf.format(calendar.getTime()));
 
                 int tahun = tgl_lahir.get(Calendar.YEAR) - calendar.get(Calendar.YEAR);
@@ -266,7 +352,7 @@ public class identitas_pasien extends AppCompatActivity {
                 calendar1.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
                 String formatTgl = "dd-MMMM-yyyy";
-                SimpleDateFormat sdf = new SimpleDateFormat(formatTgl, Locale.getDefault());
+                SimpleDateFormat sdf = new SimpleDateFormat(formatTgl, Locale.US);
                 et_tglMasukIdenPasien.setText(sdf.format(calendar1.getTime()));
             }
         };
@@ -279,7 +365,7 @@ public class identitas_pasien extends AppCompatActivity {
                 calendar2.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
                 String formatTgl = "dd-MMMM-yyyy";
-                SimpleDateFormat sdf = new SimpleDateFormat(formatTgl, Locale.getDefault());
+                SimpleDateFormat sdf = new SimpleDateFormat(formatTgl, Locale.US);
                 et_tglKeluarIdenPasien.setText(sdf.format(calendar2.getTime()));
             }
         };

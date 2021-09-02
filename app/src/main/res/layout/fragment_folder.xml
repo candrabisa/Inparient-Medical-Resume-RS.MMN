@@ -59,35 +59,6 @@
                 android:singleLine="true"
                 android:hint="Cari No.RM/Nama Pasien"/>
         </com.google.android.material.textfield.TextInputLayout>
-        <TextView
-            android:id="@+id/tv_atau"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Atau"
-            android:textSize="12sp"
-            android:layout_marginTop="12dp"
-            android:layout_below="@id/layoutCariKlinis"
-            android:layout_centerHorizontal="true"/>
-        <ImageView
-            android:id="@+id/iv_cariTglFolder"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="12dp"
-            android:src="@drawable/ic_baseline_calendar_today_24"
-            android:layout_below="@id/tv_atau"/>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:boxBackgroundColor="@color/white"
-            android:layout_below="@id/tv_atau"
-            android:layout_toRightOf="@id/iv_cariTglFolder">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_cariTglFolder"
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:hint="Cari Tanggal Berobat"/>
-        </com.google.android.material.textfield.TextInputLayout>
     </RelativeLayout>
 
     <ScrollView

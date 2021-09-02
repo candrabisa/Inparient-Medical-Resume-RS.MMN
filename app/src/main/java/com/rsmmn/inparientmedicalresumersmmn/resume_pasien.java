@@ -57,13 +57,76 @@ public class resume_pasien extends AppCompatActivity {
 
         et_nomorRmKlinis.setEnabled(false);
 
-        Bundle bundle = getIntent().getExtras();
-        final String nomor_rm = bundle.getString("nomor_rm");
-        et_nomorRmKlinis.setText(nomor_rm);
+        try {
+            Bundle bundle = getIntent().getExtras();
+            if (bundle != null){
+                final String no_rm = bundle.getString("no_rm");
+                final String ringkasan = bundle.getString("ringkasan");
+                final String terapi = bundle.getString("terapi");
+                final String konsultasi = bundle.getString("konsultasi");
+                final String diagnosis_utama = bundle.getString("diagnosis_utama");
+                final String diagnosis_sekunder = bundle.getString("diagnosis_sekunder");
+                final String tindakan = bundle.getString("tindakan");
+                final String obat_pulang = bundle.getString("obat_pulang");
+                final String kondisi_pulang = bundle.getString("kondisi_pulang");
+                final String pengobatan_selanjutnya = bundle.getString("pengobatan_selanjutnya");
+                final String dokter_penanggung_jawab = bundle.getString("dokter_penanggung_jawab");
+
+                et_nomorRmKlinis.setText(no_rm);
+                et_ringkasanPasien.setText(ringkasan);
+                et_pengobatanPasien.setText(terapi);
+                et_konsultasiPasien.setText(konsultasi);
+                et_diagnosisUtamaPasien.setText(diagnosis_utama);
+                et_diagnosisSekunderPasien.setText(diagnosis_sekunder);
+                et_tindakanPasien.setText(tindakan);
+                et_obatPulangPasien.setText(obat_pulang);
+
+                if (kondisi_pulang.equalsIgnoreCase("Sembuh")){
+                    sp_kondisiPasienPulang.setSelection(0);
+                } else if (kondisi_pulang.equalsIgnoreCase("Masih sakit")){
+                    sp_kondisiPasienPulang.setSelection(1);
+                } else if (kondisi_pulang.equals("Perbaikan")){
+                    sp_kondisiPasienPulang.setSelection(2);
+                } else if (kondisi_pulang.equalsIgnoreCase("Rujuk RS Lain")){
+                    sp_kondisiPasienPulang.setSelection(3);
+                } else if (kondisi_pulang.equalsIgnoreCase("Meninggal")){
+                    sp_kondisiPasienPulang.setSelection(4);
+                } else {
+                    sp_kondisiPasienPulang.setSelection(5);
+                }
+
+                if (pengobatan_selanjutnya.equalsIgnoreCase("puskesmas")){
+                    sp_pengobatanNextPasien.setSelection(0);
+                } else if (pengobatan_selanjutnya.equalsIgnoreCase("poliklinik")){
+                    sp_pengobatanNextPasien.setSelection(1);
+                } else if (pengobatan_selanjutnya.equalsIgnoreCase("rs lain")){
+                    sp_pengobatanNextPasien.setSelection(2);
+                } else {
+                    sp_pengobatanNextPasien.setSelection(3);
+                }
+
+                if (dokter_penanggung_jawab.equals("dr. Rinaldy Panusunan Lubis, Sp.P")){
+                    sp_dokterPenanggungJawab.setSelection(0);
+                } else if (dokter_penanggung_jawab.equals("dr. Ira, Sp.A")){
+                    sp_dokterPenanggungJawab.setSelection(1);
+                } else if (dokter_penanggung_jawab.equals("dr. Jansu S, Sp.B")){
+                    sp_dokterPenanggungJawab.setSelection(2);
+                } else if (dokter_penanggung_jawab.equals("dr. Frans, Sp.S")){
+                    sp_dokterPenanggungJawab.setSelection(3);
+                } else if (dokter_penanggung_jawab.equals("dr. Hendrik, Sp.OG")){
+                    sp_dokterPenanggungJawab.setSelection(4);
+                } else {
+                    sp_dokterPenanggungJawab.setSelection(5);
+                }
+            }
+        } catch (Exception e){
+         e.printStackTrace();
+        }
 
         btn_simpanResume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final String nomor_rm = et_nomorRmKlinis.getText().toString();
                 final String ringkasan = et_ringkasanPasien.getText().toString();
                 final String pengobatan = et_pengobatanPasien.getText().toString();
                 final String konsultasi = et_konsultasiPasien.getText().toString();

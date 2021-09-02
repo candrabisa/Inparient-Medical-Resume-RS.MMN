@@ -11,8 +11,6 @@ public class Model_KlinisPasien implements Parcelable {
 
     }
 
-
-
     protected Model_KlinisPasien(Parcel in) {
         nama_pasien = in.readString();
         nomor_rm = in.readString();
