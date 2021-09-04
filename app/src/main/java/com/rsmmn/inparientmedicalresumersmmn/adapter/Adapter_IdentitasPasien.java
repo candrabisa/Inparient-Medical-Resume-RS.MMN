@@ -69,11 +69,6 @@ public class Adapter_IdentitasPasien extends RecyclerView.Adapter<Adapter_Identi
                 Log.d("cek1", no_rm);
                 Intent intent = new Intent(context, klinis_pasien.class);
                 intent.putExtra("no_rm", no_rm);
-//                intent.putExtra("nama_pasien", nama_pasien);
-//                intent.putExtra("tgl_lahir", tgl_lahir);
-//                intent.putExtra("tgl_masuk", tgl_masuk);
-//                intent.putExtra("tgl_keluar", tgl_keluar);
-//                intent.putExtra("ruang_perawatan", ruang_perawatan);
                 context.startActivity(intent);
             }
 

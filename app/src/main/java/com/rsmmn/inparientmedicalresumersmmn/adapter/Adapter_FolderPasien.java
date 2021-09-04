@@ -95,9 +95,10 @@ public class Adapter_FolderPasien extends RecyclerView.Adapter<Adapter_FolderPas
             @Override
             public void onClick(View v) {
                 dipencet = position;
+                notifyDataSetChanged();
 
                 String [] pilihan = {"Hapus", "Edit Data"};
-                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setTitle("Silahkan Pilih");
                 builder.setItems(pilihan, new DialogInterface.OnClickListener() {
                     @Override
@@ -136,6 +137,8 @@ public class Adapter_FolderPasien extends RecyclerView.Adapter<Adapter_FolderPas
                                     dialog.cancel();
                                 }
                             });
+                            builder1.show();
+
                         } else {
                             String[] pilihan_maning = {"Identitas Pasien", "Data Klinis", "Resume Dokter"};
                             AlertDialog.Builder builder_lagi = new AlertDialog.Builder(builder.getContext());

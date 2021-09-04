@@ -33,7 +33,7 @@ public class resume_pasien extends AppCompatActivity {
     LinearLayout btnCariPasienKlinis;
     ImageView btn_kembaliresumePasien;
 
-    DatabaseReference databaseReference, dRef;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
